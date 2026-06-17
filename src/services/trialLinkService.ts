@@ -1,14 +1,10 @@
 import type { Platform, TrialLink, TrialMode } from "@/types/trial";
 
-// Hardcoded public Google Sheet (sheet must be "Anyone with the link: Viewer").
+// Sheet ID injected at build time via VITE_SHEET_ID env var (set in GitHub Secrets).
+// The sheet must be "Anyone with the link: Viewer".
 // Columns: target_url, build_id, variable_url, updated_date, version_build
-//   target_url   -> mode  ("internal_beta" | "external_beta")
-//   build_id     -> platform ("android" | "ios")
-//   variable_url -> target URL the QR/redirect resolves to
-//   updated_date -> e.g. 6/15/2024
-//   version_build-> e.g. 1.0.0
-const SHEET_ID = "19De6NcHfsQSLUoln5Bnn2_8HOFpjMzIMWHqjOMOgunU";
-const GID = "0";
+const SHEET_ID = import.meta.env.VITE_SHEET_ID ?? "";
+const GID = import.meta.env.VITE_SHEET_GID ?? "0";
 const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID}`;
 
 export const SHEET_VIEW_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?gid=${GID}`;
