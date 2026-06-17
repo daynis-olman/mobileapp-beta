@@ -50,17 +50,17 @@ export function TrialQRCard({ link, platform }: Props) {
         </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-1 flex-col gap-4">
-        <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border bg-white p-2">
+        <div className="relative aspect-square w-full overflow-hidden rounded-md border bg-white p-3">
           {link ? (
             <div
-              className={`transition-opacity duration-500 ease-out ${
+              className={`h-full w-full transition-opacity duration-500 ease-out ${
                 revealed ? "opacity-100" : "opacity-0"
               }`}
             >
-              <QRCodeSVG value={stableUrl} size={256} level="M" includeMargin={false} />
+              <QRCodeSVG value={stableUrl} className="h-full w-full" level="M" includeMargin={false} />
             </div>
           ) : (
-            <div className="h-[256px] w-[256px] animate-pulse rounded-sm bg-muted/60" />
+            <div className="h-full w-full animate-pulse rounded-sm bg-muted/60" />
           )}
         </div>
         <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1.5 text-sm">
