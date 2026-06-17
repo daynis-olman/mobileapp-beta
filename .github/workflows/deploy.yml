@@ -27,6 +27,9 @@ jobs:
       - run: bun install
 
       - run: bun run build
+        env:
+          VITE_SHEET_ID: ${{ secrets.SHEET_ID }}
+          VITE_SHEET_GID: ${{ secrets.SHEET_GID }}
 
       # GitHub Pages serves 404.html for unknown routes — copy index.html
       # so the SPA router handles all paths client-side.
