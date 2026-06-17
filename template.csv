@@ -1,0 +1,5 @@
+target_url,build_id,variable_url,updated_date,version_build
+internal_beta,android,https://play.google.com/apps/testing/com.example.app,6/15/2024,1.2.0
+internal_beta,ios,https://testflight.apple.com/join/AbCdEfGh,6/15/2024,1.2.0
+external_beta,android,https://play.google.com/apps/testing/com.example.app,6/14/2024,1.1.9
+external_beta,ios,https://testflight.apple.com/join/XyZwVuTs,6/14/2024,1.1.9
